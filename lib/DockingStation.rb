@@ -11,10 +11,10 @@ class DockingStation
   end
   def release_bike
     puts @store
-    if empty?
+    if empty? || @store.last == "broken"
       raise
     else
-      return Bike.new
+      return @store.pop
     end
   end
   def dock
@@ -25,8 +25,6 @@ class DockingStation
       raise
     else
     @store.push(bike)
-    puts "%%%%%%%%%"
-    puts @num
     end
   end
   def store

@@ -68,4 +68,23 @@ describe "to pass an argument in Initialize method" do
     expect(dk_st.store).to include(bk)
 }
 end
+
+# describe "to report a bike a broken" do
+# it {
+#   bk = Bike.new
+#   expect(bk).to respond_to(:broken)
+# }
+# end
+
+describe "to report a bike a broken" do
+it {
+
+  dk = DockingStation.new
+  # b.broken
+  dk.put_bike("broken")
+  expect{dk.release_bike}.to raise_error(RuntimeError)
+}
+
+end
+
 end
