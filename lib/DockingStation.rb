@@ -1,12 +1,13 @@
 require_relative 'Bike'
 class DockingStation
   #attr_reader :bike 
-  def initialize (bike = "any value")
-    @bike = bike
+  def initialize #(bike = "any value")
+    #@bike = bike
+    @store = []
   end
   def release_bike
-    puts @bike
-    if @bike == "any value"
+    puts @store
+    if @store.length < 1
     raise
     else 
       return Bike.new
@@ -16,9 +17,13 @@ class DockingStation
     bike
   end
   def put_bike(bike)
-    @bike = bike
+    if @store.length >= 1
+      raise
+    else
+    @store.push(bike)
+    end
   end
-  def bike
-    return @bike
+  def store
+    return @store
   end
 end
