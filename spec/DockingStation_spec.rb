@@ -60,4 +60,12 @@ end
     expect {dk_st.put_bike(bk)}.to raise_error(RuntimeError)
   }
 end
+describe "to pass an argument in Initialize method" do
+  it {
+    bk = Bike.new
+    dk_st = DockingStation.new()
+    dk_st.put_bike(bk)
+    expect(dk_st.store).to include(bk)
+}
+end
 end

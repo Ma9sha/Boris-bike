@@ -3,9 +3,11 @@ require_relative 'Bike'
 class DockingStation
   DEFAULT_CAPACITY = 20
   #attr_reader :bike
-  def initialize #(bike = "any value")
+  def initialize (num=DEFAULT_CAPACITY)
     #@bike = bike
     @store = []
+    @num = num
+
   end
   def release_bike
     puts @store
@@ -23,6 +25,8 @@ class DockingStation
       raise
     else
     @store.push(bike)
+    puts "%%%%%%%%%"
+    puts @num
     end
   end
   def store
@@ -31,7 +35,7 @@ class DockingStation
 
 private
   def full?
-    @store.length >= DEFAULT_CAPACITY
+    @store.length >= @num
   end
 
   def empty?
