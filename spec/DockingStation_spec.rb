@@ -31,7 +31,25 @@ end
     it {
       bike = Bike.new
       docking_station = DockingStation.new(bike)
+      
       expect(docking_station.dock).to eq(bike)
     }
+  end
+  describe "see the bike docked" do
+    it {
+      #arrange
+      bike = Bike.new
+      docking_station = DockingStation.new
+      #act
+      docking_station.put_bike(bike)
+      expect(docking_station.bike).to eq(bike)
+    }
+  end
+  describe "to throw an error when a bike is not found" do
+    it {
+    bk = Bike.new
+    dk_st = DockingStation.new
+    expect {dk_st.release_bike}.to raise_error(RuntimeError)
+  }
   end
 end
