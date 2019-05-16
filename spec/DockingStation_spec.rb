@@ -31,7 +31,7 @@ end
   #   it {
   #     bike = Bike.new
   #     docking_station = DockingStation.new
-      
+
   #     expect(docking_station.dock).to eq(bike)
   #   }
   # end
@@ -56,7 +56,7 @@ end
     it {
     bk = Bike.new
     dk_st = DockingStation.new
-    dk_st.put_bike(bk)
+    20.times { dk_st.put_bike(bk) }
     expect {dk_st.put_bike(bk)}.to raise_error(RuntimeError)
   }
 end
