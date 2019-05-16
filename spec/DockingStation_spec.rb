@@ -56,7 +56,7 @@ end
     it {
     bk = Bike.new
     dk_st = DockingStation.new
-    20.times { dk_st.put_bike(bk) }
+    DockingStation::DEFAULT_CAPACITY.times { dk_st.put_bike(bk) }
     expect {dk_st.put_bike(bk)}.to raise_error(RuntimeError)
   }
 end
